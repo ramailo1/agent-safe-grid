@@ -1,3 +1,4 @@
+
 # Logs
 logs
 *.log
@@ -30,14 +31,22 @@ dist-ssr
 *.sln
 *.sw?
 
-# Test results
-#test-results/
-#playwright-report/
-#playwright-report/
+# Test results and reports
+test-results/
+playwright-report/
 playwright/.cache/
+*.txt
 
 # Backup files
 *.sql
 *.sql.gz
 *.sql.enc
 backups/
+BACKUP_RECOVERY.md
+
+# Debug and temporary files
+debug-db.ts
+metadata.json
+
+# Docker test files
+docker-compose.test.yml
