@@ -4,7 +4,7 @@
 
 ### Secure AI Middleware Platform for Enterprise LLM Deployments
 
-[![Version](https://img.shields.io/badge/version-2.4.0-blue.svg)](https://github.com/yourusername/agent-safe-grid)
+[![Version](https://img.shields.io/badge/version-2.4.0-blue.svg)](https://github.com/ramailo1/agent-safe-grid)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.2-61dafb.svg)](https://reactjs.org/)
@@ -149,7 +149,7 @@ erDiagram
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/agent-safe-grid.git
+   git clone https://github.com/ramailo1/agent-safe-grid.git
    cd agent-safe-grid
    ```
 
@@ -463,7 +463,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - **Documentation**: [View full documentation](#)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/agent-safe-grid/issues)
+- **Issues**: [GitHub Issues](https://github.com/ramailo1/agent-safe-grid/issues)
 - **Email**: ramailrakou@gmail.com
 
 ---
@@ -472,6 +472,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ by the Soufienne Rahali**
 
-[⭐ Star on GitHub](https://github.com/yourusername/agent-safe-grid) | [🐛 Report Bug](https://github.com/yourusername/agent-safe-grid/issues) | [💡 Request Feature](https://github.com/yourusername/agent-safe-grid/issues)
+[⭐ Star on GitHub](https://github.com/ramailo1/agent-safe-grid) | [🐛 Report Bug](https://github.com/ramailo1/agent-safe-grid/issues) | [💡 Request Feature](https://github.com/ramailo1/agent-safe-grid/issues)
 
 </div>
