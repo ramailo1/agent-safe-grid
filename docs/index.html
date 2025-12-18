@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agent-SAFE Grid - Secure AI Middleware Platform for Enterprise LLM Deployments">
+    <meta name="keywords" content="AI, LLM, Security, Middleware, Enterprise, Compliance, OpenAI, Gemini">
+    <meta name="author" content="Soufienne Rahali">
+    <title>Agent-SAFE Grid - Secure AI Middleware Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #60a5fa;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #60a5fa;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 60px 0;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .tech-stack h2 {
+            color: #60a5fa;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            border-color: rgba(96, 165, 250, 0.5);
+            transform: scale(1.05);
+        }
+
+        .quick-start {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 60px 0;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .quick-start h2 {
+            color: #60a5fa;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .code-block {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .code-block code {
+            color: #10b981;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Agent-SAFE Grid</h1>
+            <p class="subtitle">Secure AI Middleware Platform for Enterprise LLM Deployments</p>
+
+            <div class="badges">
+                <span class="badge">Version 2.4.0</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">React 18</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">Open Source</span>
+            </div>
+
+            <div>
+                <a href="https://github.com/yourusername/agent-safe-grid" class="cta-button" target="_blank">
+                    ⭐ View on GitHub
+                </a>
+                <a href="https://github.com/yourusername/agent-safe-grid#-quick-start" class="cta-button"
+                    target="_blank">
+                    🚀 Get Started
+                </a>
+            </div>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Enterprise Security</h3>
+                <p>Built-in PII detection, content filtering, AES-256-GCM encryption, and comprehensive security headers
+                    protect your AI applications.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Real-time Monitoring</h3>
+                <p>Complete observability with audit logs, login tracking, transaction history, and usage analytics
+                    dashboard.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Billing & Payments</h3>
+                <p>Flexible pricing plans, payment gateway integration, encrypted bank account storage, and automated
+                    payout management.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Policy Engine</h3>
+                <p>Visual no-code policy builder with custom rule definitions, JSON Schema validation, and version
+                    control.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Multi-Provider Support</h3>
+                <p>Seamless integration with OpenAI, Google Gemini, Anthropic, and other LLM providers with automatic
+                    routing.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏢</div>
+                <h3>Multi-Tenant Architecture</h3>
+                <p>Built-in organization management, team collaboration, and role-based access control for enterprise
+                    deployments.</p>
+            </div>
+        </section>
+
+        <section class="tech-stack">
+            <h2>🏗️ Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">React 18</div>
+                <div class="tech-item">TypeScript 5</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">Express</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">Vite</div>
+                <div class="tech-item">Tailwind CSS</div>
+                <div class="tech-item">JWT Auth</div>
+                <div class="tech-item">Bcrypt</div>
+                <div class="tech-item">Playwright</div>
+                <div class="tech-item">Vitest</div>
+                <div class="tech-item">Recharts</div>
+            </div>
+        </section>
+
+        <section class="quick-start">
+            <h2>🚀 Quick Start</h2>
+            <p style="margin-bottom: 20px;">Get up and running in minutes:</p>
+
+            <div class="code-block">
+                <code># Clone the repository<br>
+git clone https://github.com/yourusername/agent-safe-grid.git<br>
+cd agent-safe-grid<br><br>
+# Install dependencies<br>
+npm install<br><br>
+# Configure environment<br>
+cp .env.example .env<br>
+# Edit .env with your database and secrets<br><br>
+# Start the backend<br>
+npm run server<br><br>
+# Start the frontend (in new terminal)<br>
+npm run dev</code>
+            </div>
+
+            <p
+                style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; border-radius: 5px;">
+                <strong>Default Admin:</strong> admin@agentgrid.com / SecureAdminPassword123!<br>
+                <em>⚠️ Change password immediately after first login</em>
+            </p>
+        </section>
+
+        <section class="tech-stack">
+            <h2>📋 Key Features</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+                    ✅ <strong>Authentication:</strong> JWT-based with 24-hour expiration and role-based access control
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+                    ✅ <strong>Security:</strong> CSRF protection, rate limiting, input validation, and SQL injection
+                    prevention
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+                    ✅ <strong>Testing:</strong> Comprehensive unit, integration, and E2E test coverage
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+                    ✅ <strong>Database:</strong> Automatic migrations and schema management
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+                    ✅ <strong>API:</strong> RESTful API with comprehensive documentation
+                </li>
+                <li style="padding: 10px 0;">
+                    ✅ <strong>Production Ready:</strong> Optimized builds, error handling, and logging
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername/agent-safe-grid" target="_blank">GitHub</a>
+                <a href="https://github.com/yourusername/agent-safe-grid#-documentation"
+                    target="_blank">Documentation</a>
+                <a href="https://github.com/yourusername/agent-safe-grid/issues" target="_blank">Issues</a>
+                <a href="mailto:ramailrakou@gmail.com">Contact</a>
+            </div>
+            <p style="margin-top: 20px;">
+                Made with ❤️ by <strong>Soufienne Rahali</strong>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                📧 Support: <a href="mailto:ramailrakou@gmail.com" style="color: #60a5fa;">ramailrakou@gmail.com</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
