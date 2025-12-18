@@ -465,7 +465,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Documentation**: [View full documentation](#)
 - **Issues**: [GitHub Issues](https://github.com/ramailo1/agent-safe-grid/issues)
 - **Email**: ramailrakou@gmail.com
-
+- ☕ **Buy me a coffee** - [Support the developer](https://coff.ee/soufienne)
+- 💼 **Commercial licensing** for business use
+- 📧 **Contact** for custom development services
 ---
 
 <div align="center">
